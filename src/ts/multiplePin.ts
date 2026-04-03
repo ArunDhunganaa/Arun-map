@@ -10,7 +10,6 @@ export default async function initProjectMap(): Promise<void> {
   ) as google.maps.MapElement;
   const innerMap = mapElement.innerMap;
 
-  // --- 1. Custom theme ---
   innerMap.setOptions({
     mapTypeControl: false,
     styles: [
