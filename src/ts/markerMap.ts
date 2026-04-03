@@ -1,3 +1,4 @@
+/// <reference types="google-maps" />
 export default async function initMarkerMap(): Promise<void> {
   const [{}, { AdvancedMarkerElement, PinElement }] = await Promise.all([
     google.maps.importLibrary("maps") as Promise<google.maps.MapsLibrary>,
