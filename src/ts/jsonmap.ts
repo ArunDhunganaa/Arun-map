@@ -1,3 +1,4 @@
+/// <reference types="google-maps" />
 export default async function initJSONMap(): Promise<void> {
   const customStyle = [
     {

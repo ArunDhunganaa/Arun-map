@@ -1,5 +1,5 @@
 export default async function initProjectMap(): Promise<void> {
-  const [{ Map }, { AdvancedMarkerElement, PinElement }] = await Promise.all([
+  const [{}, { AdvancedMarkerElement, PinElement }] = await Promise.all([
     google.maps.importLibrary("maps") as Promise<google.maps.MapsLibrary>,
     google.maps.importLibrary("marker") as Promise<google.maps.MarkerLibrary>,
   ]);
