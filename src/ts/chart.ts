@@ -1,4 +1,4 @@
-import Chart, { type ChartItem } from "chart.js/auto";
+import Chart from "chart.js/auto";
 
 export default function initChart() {
   const ctx = document.querySelector(".growth-chart") as HTMLCanvasElement;

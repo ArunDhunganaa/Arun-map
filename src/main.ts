@@ -7,11 +7,11 @@ import initProjectMap from "./ts/multiplePin";
 import initNearbyPlaces from "./ts/nearbyPlaces";
 import initRadiusMap from "./ts/radiusMap";
 
-// initJSONMap();
-// initMarkerMap();
-// initProjectMap();
-// initNearbyPlaces();
-// initClusterMap();
+initJSONMap();
+initMarkerMap();
+initProjectMap();
+initNearbyPlaces();
+initClusterMap();
 initRadiusMap();
 initChart();
 initHighChart();
