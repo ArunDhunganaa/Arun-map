@@ -30,9 +30,6 @@ export default function initHighChart() {
 
   Gantt.ganttChart("gantt-container", ganttOptions);
 
-  /**
-   * 2. Area Chart - Growth Trend
-   */
   const growthOptions: Highcharts.Options = {
     chart: { type: "area" },
     title: { text: undefined },
@@ -50,9 +47,6 @@ export default function initHighChart() {
 
   Highcharts.chart("growth-container", growthOptions);
 
-  /**
-   * 3. Column Chart - Comparison
-   */
   const comparisonOptions: Highcharts.Options = {
     chart: { type: "column" },
     title: { text: undefined },

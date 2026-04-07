@@ -15,7 +15,7 @@ export default function initChart() {
           borderColor: "#ff6384",
           backgroundColor: "rgba(255, 99, 132, 0.2)",
           fill: true,
-          tension: 0.4, // Smoothes the line
+          tension: 0.4,
         },
         {
           type: "bar",
@@ -54,7 +54,7 @@ export default function initChart() {
       ],
     },
     options: {
-      cutout: "70%", // Makes the ring thinner
+      cutout: "70%",
       plugins: {
         legend: { position: "bottom" },
       },
