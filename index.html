@@ -4,27 +4,180 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Maps</title>
+    <title>Maps + Chart</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="/src/style.css" />
   </head>
   <body>
     <div class="app">
-      <div class="map"></div>
-      <gmp-map
-        class="gmp-map-1"
-        center="27.7172,85.3240"
-        zoom="13"
-        map-id="DEMO_MAP_ID"
-      >
-      </gmp-map>
-      <gmp-map
-        class="gmp-map-2"
-        center="28.3,84.0"
-        zoom="7"
-        map-id="DEMO_MAP_ID"
-      >
-      </gmp-map>
+      <header class="topbar">
+        <span class="topbar-logo">Maps </span>
+        <div class="topbar-dot"></div>
+        <span class="topbar-logo">Charts</span>
+      </header>
+
+      <div class="container">
+        <section class="section">
+          <div class="grid-2">
+            <div class="card">
+              <div class="card-header">
+                <span class="card-title">Kathmandu City</span>
+              </div>
+              <gmp-map
+                class="gmp-map-1"
+                center="27.7172,85.3240"
+                zoom="13"
+                map-id="DEMO_MAP_ID"
+              ></gmp-map>
+            </div>
+
+            <div class="card">
+              <div class="card-header">
+                <span class="card-title">Nepal Region</span>
+              </div>
+              <gmp-map
+                class="gmp-map-2"
+                center="28.3,84.0"
+                zoom="7"
+                map-id="DEMO_MAP_ID"
+              ></gmp-map>
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="card">
+            <div class="card-header">
+              <span class="card-title">Filter by Category</span>
+            </div>
+
+            <div class="nearby-controls-wrapper">
+              <div class="nearby-controls"></div>
+            </div>
+            <gmp-map
+              class="nearby-map"
+              center="27.7172,85.3240"
+              zoom="14"
+              map-id="DEMO_MAP_ID"
+            ></gmp-map>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="card">
+            <div class="card-header">
+              <span class="card-title">Cluster Map — Nepal</span>
+            </div>
+            <gmp-map
+              class="cluster-map"
+              center="28.3,84.0"
+              zoom="7"
+              map-id="DEMO_MAP_ID"
+            ></gmp-map>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="card">
+            <div class="card-header">
+              <span class="card-title">Search Within Radius</span>
+            </div>
+
+            <div class="radius-controls-wrapper">
+              <button class="radius-gps-btn">Use My Location</button>
+
+              <div class="radius-slider-group">
+                <input
+                  title="radius slider"
+                  class="radius-slider"
+                  type="range"
+                  min="500"
+                  max="5000"
+                  value="2000"
+                  step="100"
+                />
+                <span class="radius-label">2.0 km</span>
+              </div>
+            </div>
+
+            <gmp-map
+              class="radius-map"
+              center="27.7172,85.3240"
+              zoom="13"
+              map-id="DEMO_MAP_ID"
+            ></gmp-map>
+          </div>
+        </section>
+
+        <section class="chart">
+          <div class="grid-3">
+            <div class="card">
+              <div class="card-header">
+                <span class="card-title">Market Overview</span>
+              </div>
+              <div class="chart-wrapper">
+                <canvas class="market-chart"></canvas>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-header">
+                <span class="card-title">Growth Trend</span>
+              </div>
+              <div class="chart-wrapper">
+                <canvas class="growth-chart"></canvas>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-header">
+                <span class="card-title">Comparison</span>
+              </div>
+              <div class="chart-wrapper">
+                <canvas class="comparison-chart"></canvas>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="highchart">
+          <div class="grid-3">
+            <div class="card">
+              <div class="card-header">
+                <span class="card-title">Project Timeline</span>
+              </div>
+              <div class="chart-wrapper">
+                <div id="gantt-container"></div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-header">
+                <span class="card-title">Growth Trend</span>
+              </div>
+              <div class="chart-wrapper">
+                <div id="growth-container"></div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-header">
+                <span class="card-title">Resource Comparison</span>
+              </div>
+              <div class="chart-wrapper">
+                <div id="comparison-container"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
     </div>
+
     <script type="module" src="/src/main.ts"></script>
     <script>
       ((g) => {
@@ -64,8 +217,6 @@
       })({
         key: "%VITE_MAP_API%",
         v: "weekly",
-        // Use the 'v' parameter to indicate the version to use (weekly, beta, alpha, etc.).
-        // Add other bootstrap parameters as needed, using camel case.
       });
     </script>
   </body>
